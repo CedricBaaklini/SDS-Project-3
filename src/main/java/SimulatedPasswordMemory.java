@@ -24,7 +24,7 @@ public class SimulatedPasswordMemory {
     }
 
     /*
-      This method shows a  unsafe and incoherent way of stopping a password from creating a Buffer Overflow.
+      This method shows an unsafe and incoherent way of stopping a password from creating a Buffer Overflow.
        
        Basically, it copies the characters of the password and compares them.
        
