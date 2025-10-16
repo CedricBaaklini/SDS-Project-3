@@ -24,11 +24,13 @@ public class SimulatedPasswordMemory {
     }
 
     /*
-      This method shows a very unsafe and incoherent way of stopping a password from creating a Buffer Overflow.
+      This method shows a  unsafe and incoherent way of stopping a password from creating a Buffer Overflow.
        
        Basically, it copies the characters of the password and compares them.
        
        If the password inserted is greater than 8, it won't grant access, but it will elevate user privileges.
+       
+       However, if the input is exactly equal to the string "secret12", then the access will be granted.
        
        The point of this method is to mimic a buffer overflow without dealing with the memory as that would risk the safety of the computer.     
      */
@@ -47,6 +49,13 @@ public class SimulatedPasswordMemory {
         }
     }
 
+    /*
+      This method, on the other hand, is much more concise. 
+      
+      Not only will it check if a password is too long, but it will stop the input from being passed.
+      
+      On top of this, it will also see if the string is exactly equal to the hard-coded password.  
+     */
     public boolean safePasswordProcessing(String input) {
         if (input.length() > 8) {
             System.out.println("Safe Processing: Password too long (rejected)");
